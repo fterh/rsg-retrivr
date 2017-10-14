@@ -1,0 +1,16 @@
+{
+    "sites": [
+        {
+            "name": "straitstimes",
+            "re_url_match": "straitstimes.com$",
+            "title_selector": "h1.headline.node-title",
+            "body_selector": "div[itemprop=\"articleBody\"] > p"
+        },
+        {
+            "name": "todayonline",
+            "re_url_match": "todayonline.com$",
+            "title_selector": "foo",
+            "body_selector": "bar"
+        }
+    ]
+}
