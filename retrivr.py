@@ -8,7 +8,7 @@ import praw
 from modules.article import article
 
 reddit = praw.Reddit("rsg-retrivr")
-rsg = reddit.subreddit("rsgretrivr")
+rsg = reddit.subreddit("singapore")
 
 with open("sites.json", "r") as f:
     sites = json.load(f)
