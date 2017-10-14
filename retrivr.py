@@ -7,6 +7,8 @@ import praw
 
 from modules.article import article
 
+print("Initializing retrivr.py")
+
 reddit = praw.Reddit("rsg-retrivr")
 rsg = reddit.subreddit("singapore")
 
@@ -51,3 +53,5 @@ for submission in rsg.new(limit=10):
                     with open("replied.txt", "w") as f:
                         for id in replied:
                             f.write(id + "\n")
+
+print("Ending retrivr.py")
