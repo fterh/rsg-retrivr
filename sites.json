@@ -7,10 +7,16 @@
             "body_selector": "div[itemprop=\"articleBody\"] > p"
         },
         {
-            "name": "todayonline",
-            "re_url_match": "todayonline.com$",
-            "title_selector": "foo",
-            "body_selector": "bar"
+            "name": "channelnewsasia",
+            "re_url_match": "channelnewsasia.com$",
+            "title_selector": "h1.article__title",
+            "body_selector": "div.c-rte--article > p"
+        },
+        {
+            "name": "bloomberg",
+            "re_url_match": "bloomberg.com$",
+            "title_selector": "h1.lede-text-only__hed > span",
+            "body_selector": "div.body-copy > p"
         }
     ]
 }
