@@ -33,8 +33,8 @@ for submission in rsg.new(limit=10):
 
                 if hasattr(a, "title") and hasattr(a, "body"):
                     post_footer = ("> [Source](" + submission.url + ")\n\n---\n"
-                        "v1.0 | [Github](https://github.com/fterh/rsg-retrivr) "
-                        "| I'm designed to never spam (i.e. no multiple posts)")
+                        "v1.1 | [Github](https://github.com/fterh/rsg-retrivr) "
+                        "| [Readme/Changelog](https://github.com/fterh/rsg-retrivr/blob/master/README.md)")
                     post = "> #" + a.title + "\n\n" + a.body + post_footer
 
                     # post my comment subject to character limits
@@ -43,10 +43,7 @@ for submission in rsg.new(limit=10):
                         print("Replied (success) to " + submission.id)
 
                     else:
-                        post = ("Sorry, the article is too long for me to "
-                            "post without spamming. I'm as bummed as you are.")
-                        submission.reply(post)
-                        print("Replied (too long) to " + submission.id)
+                        print("Skipped (too long) to " + submission.id)
 
                     replied.append(submission.id)
 
