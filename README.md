@@ -2,7 +2,6 @@
 ## v1.1
 * Refined straitstimes content selector
   * Previously, some straitstimes article formats were not compatible. The content selector has been tweaked to fix this.
-* Added support for mothership, theonlinecitizen
 * Bot will no longer post that the article is too long when the article is too long. It'll just skip posting anything at all.
 
 ## v1.0
