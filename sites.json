@@ -13,6 +13,18 @@
             "body_selector": "div.c-rte--article > p"
         },
         {
+            "name": "todayonline",
+            "re_url_match": "todayonline.com$",
+            "title_selector": "#page-title",
+            "body_selector": "#content-main > div.inner div.content > p"
+        },
+        {
+            "name": "mothership",
+            "re_url_match": "mothership.sg$",
+            "title_selector": "#article-original > div.header > h1",
+            "body_selector": "#article-original > div.content-article-wrap > p"
+        },
+        {
             "name": "bloomberg",
             "re_url_match": "bloomberg.com$",
             "title_selector": "h1.lede-text-only__hed > span",
