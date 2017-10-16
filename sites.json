@@ -4,7 +4,7 @@
             "name": "straitstimes",
             "re_url_match": "straitstimes.com$",
             "title_selector": "h1.headline.node-title",
-            "body_selector": "div[itemprop=\"articleBody\"] > p"
+            "body_selector": "div.odd.field-item > p"
         },
         {
             "name": "channelnewsasia",
