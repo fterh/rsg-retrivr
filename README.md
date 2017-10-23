@@ -1,4 +1,6 @@
 # Changelog
+## v1.2
+* Support for todayonline and mothership
 ## v1.1
 * Refined straitstimes content selector
   * Previously, some straitstimes article formats were not compatible. The content selector has been tweaked to fix this.
@@ -12,6 +14,6 @@
 ## 1. What are you?
 
 I'm a bot that retrieves news articles (at the moment) and posts them as a top-level comment. **I am designed to never spam.**
-If the post is too long to post in a single comment, I'll skip it. 
+If the post is too long to post in a single comment, I'll skip it.
 
 *More coming...*
