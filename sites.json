@@ -22,7 +22,7 @@
             "name": "mothership",
             "re_url_match": "mothership.sg$",
             "title_selector": "#article-original > div.header > h1",
-            "body_selector": "#article-original > div.content-article-wrap > p"
+            "body_selector": "#article-original div.content-article-wrap > p"
         },
         {
             "name": "bloomberg",
