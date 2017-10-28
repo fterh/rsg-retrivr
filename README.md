@@ -1,6 +1,10 @@
 # Changelog
+## v2.0
+* Fixed broken mothership content selector (body_selector)
+* Bot now supports hyperlinks
+* Requests are made with a user-agent header (this should fix 403 forbidden responses encountered during testing)
 ## v1.2
-* Support for todayonline and mothership
+* Support for todayonline and mothership 
 ## v1.1
 * Refined straitstimes content selector
   * Previously, some straitstimes article formats were not compatible. The content selector has been tweaked to fix this.
