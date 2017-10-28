@@ -39,7 +39,7 @@ for submission in rsg.new(limit=10):
 
                 if hasattr(a, "title") and hasattr(a, "body"):
                     post_footer = ("> [Source](" + submission.url + ")\n\n---\n"
-                        "v1.2 | [Github](https://github.com/fterh/rsg-retrivr) "
+                        "v2.0 | [Github](https://github.com/fterh/rsg-retrivr) "
                         "| [Readme/Changelog](https://github.com/fterh/rsg-retrivr/blob/master/README.md)")
                     post = "> #" + a.title + "\n\n" + a.body + post_footer
 
