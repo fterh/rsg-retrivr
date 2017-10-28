@@ -1,6 +1,7 @@
 from urllib.parse import urlparse
 import re
 import os
+import sys
 import json
 
 import praw
@@ -10,7 +11,12 @@ from modules.article import article
 print("Initializing retrivr.py")
 
 reddit = praw.Reddit("rsg-retrivr")
-rsg = reddit.subreddit("singapore")
+
+# development or production mode
+if len(sys.argv) == 2 and sys.argv[1] == "dev":
+    rsg = reddit.subreddit("rsgretrivr")
+else:
+    rsg = reddit.subreddit("singapore")
 
 with open("sites.json", "r") as f:
     sites = json.load(f)
