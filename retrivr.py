@@ -6,7 +6,9 @@ import json
 
 import praw
 
+import settings
 from modules.article import article
+from modules.mercury import mercury
 
 if len(sys.argv) == 2 and sys.argv[1] == "dev":
     dev = True
@@ -36,31 +38,30 @@ for submission in rsg.new(limit=10):
     # if submission is a link and I have not replied to it before
     if not submission.is_self and submission.id not in replied:
 
-        # if domain matches one of the supported sites
-        domain = urlparse(submission.url).netloc
-        for site in sites["sites"]:
-            if (re.search(site["re_url_match"], domain)):
+        a = mercury(submission.url, settings.mercury_api_key)
 
-                a = article(submission.url, site)
+        if a.title and a.body is not "":
+            # article URL
+            post_footer = "> [Source](" + submission.url + ")\n\n---\n"
 
-                if hasattr(a, "title") and hasattr(a, "body"):
-                    post_footer = ("> [Source](" + submission.url + ")\n\n---\n"
-                        "v2.0 | [Github](https://github.com/fterh/rsg-retrivr) "
-                        "| [Readme/Changelog](https://github.com/fterh/rsg-retrivr/blob/master/README.md)")
-                    post = "> #" + a.title + "\n\n" + a.body + post_footer
+            # footer meta information
+            with open("footer_meta.md", "r") as f:
+                post_footer += f.read()
 
-                    # post my comment subject to character limits
-                    if (len(post) <= 9900):
-                        submission.reply(post)
-                        print("Replied (success) to " + submission.id)
+            post = "> #" + a.title + "\n\n" + a.body + post_footer
 
-                    else:
-                        print("Skipped (too long) to " + submission.id)
+            # post my comment subject to character limits
+            if (len(post) <= 9900):
+                submission.reply(post)
+                print("Replied (success) to " + submission.id)
 
-                    replied.append(submission.id)
+            else:
+                print("Skipped (too long) to " + submission.id)
 
-                    with open("replied.txt", "w") as f:
-                        for id in replied:
-                            f.write(id + "\n")
+            replied.append(submission.id)
+
+            with open("replied.txt", "w") as f:
+                for id in replied:
+                    f.write(id + "\n")
 
 print("Ending retrivr.py")
