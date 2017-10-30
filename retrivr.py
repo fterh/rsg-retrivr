@@ -8,12 +8,18 @@ import praw
 
 from modules.article import article
 
-print("Initializing retrivr.py")
+if len(sys.argv) == 2 and sys.argv[1] == "dev":
+    dev = true
+
+if dev is true:
+    print("Initializing retrivr.py in dev mode")
+else:
+    print("Initializing retrivr.py")
 
 reddit = praw.Reddit("rsg-retrivr")
 
 # development or production mode
-if len(sys.argv) == 2 and sys.argv[1] == "dev":
+if dev is true
     rsg = reddit.subreddit("rsgretrivr")
 else:
     rsg = reddit.subreddit("singapore")
