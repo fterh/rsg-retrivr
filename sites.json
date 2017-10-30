@@ -29,6 +29,12 @@
             "re_url_match": "bloomberg.com$",
             "title_selector": "h1.lede-text-only__hed > span",
             "body_selector": "div.body-copy > p"
+        },
+        {
+            "name": "techcrunch",
+            "re_url_match": "techcrunch.com$",
+            "title_selector": "h1.alpha.tweet-title",
+            "body_selector": "div.article-entry"
         }
     ]
 }
