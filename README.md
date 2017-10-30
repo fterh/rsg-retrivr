@@ -1,4 +1,7 @@
 # Changelog
+## v3.0
+* Completely rewrote the parsing mechanism - the bot now relies on the Mercury web parser. It should now support virtually every news site without having to individually write the rules for each site.
+* The bot should also retrieve *some* information from sites like Youtube (to the extent that Mercury is able to parse *some* information out of it). But the bot should ignore sites like Imgur (where Mercury is unable to parse any *useful* information).
 ## v2.0
 * Fixed broken mothership content selector (body_selector)
 * Bot now supports hyperlinks
