@@ -40,28 +40,28 @@ for submission in rsg.new(limit=10):
 
         a = mercury(submission.url, settings.mercury_api_key)
 
-        if hasattr(a, "title") and hasattr(a, "body"):
+        if a.title and a.body is not "":
             # article URL
             post_footer = "> [Source](" + submission.url + ")\n\n---\n"
 
-        # footer meta information
-        with open("footer_meta.md", "r") as f:
-            post_footer += f.read()
+            # footer meta information
+            with open("footer_meta.md", "r") as f:
+                post_footer += f.read()
 
-        post = "> #" + a.title + "\n\n" + a.body + post_footer
+            post = "> #" + a.title + "\n\n" + a.body + post_footer
 
-        # post my comment subject to character limits
-        if (len(post) <= 9900):
-            submission.reply(post)
-            print("Replied (success) to " + submission.id)
+            # post my comment subject to character limits
+            if (len(post) <= 9900):
+                submission.reply(post)
+                print("Replied (success) to " + submission.id)
 
-        else:
-            print("Skipped (too long) to " + submission.id)
+            else:
+                print("Skipped (too long) to " + submission.id)
 
-        replied.append(submission.id)
+            replied.append(submission.id)
 
-        with open("replied.txt", "w") as f:
-            for id in replied:
-                f.write(id + "\n")
+            with open("replied.txt", "w") as f:
+                for id in replied:
+                    f.write(id + "\n")
 
 print("Ending retrivr.py")
