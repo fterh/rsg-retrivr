@@ -10,6 +10,8 @@ from modules.article import article
 
 if len(sys.argv) == 2 and sys.argv[1] == "dev":
     dev = True
+else:
+    dev = False
 
 if dev is True:
     print("Initializing retrivr.py in dev mode")
