@@ -16,6 +16,7 @@ class mercury:
         j = json.loads(r.text)
 
         self.title = j["title"]
+        self.author = j["author"]
         self.content = j["content"]
         self.date_published = j["date_published"]
         self.lead_image_url = j["lead_image_url"]
