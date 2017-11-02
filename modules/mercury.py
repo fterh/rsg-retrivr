@@ -1,6 +1,7 @@
 import requests
 import json
 
+from modules.link_check import LinkCheck
 from bs4 import BeautifulSoup as bs
 
 class mercury:
@@ -37,6 +38,9 @@ class mercury:
         soup = bs(self.content, "html.parser")
         body = ""
 
+        # prepare to check for disallowed link
+        link_check = LinkCheck()
+
         # content to markdown
         for paragraph in soup.select("p"): # working assumption: <p> tags
 
@@ -44,7 +48,12 @@ class mercury:
             if paragraph.a:
                 gen = (a for a in paragraph.select("a") if a.string is not None)
                 for a in gen:
-                    a.string = "[" + a.string + "](" + a.get("href") + ")"
+                    # remove link if it is disallowed
+                    if (link_check.link_is_disallowed(a.get("href"))):
+                        a.string = "[link is removed]"
+
+                    else:
+                        a.string = "[" + a.string + "](" + a.get("href") + ")"
 
             body += "> " + paragraph.get_text() + "\n\n"
 
