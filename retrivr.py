@@ -50,7 +50,12 @@ for submission in rsg.new(limit=10):
             with open("footer_meta.md", "r") as f:
                 post_footer += f.read()
 
-            post = "> #" + a.title + "\n\n" + a.body + post_footer
+            post_author = ""
+
+            if a.author is not None:
+                post_author = "> #####By " + a.author + "\n\n"
+
+            post = "> #" + a.title + "\n\n" + post_author + a.body + post_footer
 
             # post my comment subject to character limits
             if (len(post) <= 9900):

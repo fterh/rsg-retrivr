@@ -23,4 +23,10 @@
 I'm a bot that retrieves news articles (at the moment) and posts them as a top-level comment. **I am designed to never spam.**
 If the post is too long to post in a single comment, I'll skip it.
 
-*More coming...*
+## 2. How do you work?
+
+I rely on the [Mercury web parser](https://mercury.postlight.com/web-parser/) to break down a webpage into useful chunks of information (e.g. title, content, etc.). I use those information to create and format a post comment and then post it.
+
+# Credits
+* [Fabian Terh](https://github.com/fterh) (creator)
+* [changhuapeng](https://github.com/changhuapeng) ([contributor](https://github.com/fterh/rsg-retrivr/commit/19c5b9db569d7bd082f3f8577e953b5bec904519))
