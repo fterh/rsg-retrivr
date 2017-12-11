@@ -7,7 +7,7 @@
 * Bot now supports hyperlinks
 * Requests are made with a user-agent header (this should fix 403 forbidden responses encountered during testing)
 ## v1.2
-* Support for todayonline and mothership 
+* Support for todayonline and mothership
 ## v1.1
 * Refined straitstimes content selector
   * Previously, some straitstimes article formats were not compatible. The content selector has been tweaked to fix this.
@@ -26,6 +26,11 @@ If the post is too long to post in a single comment, I'll skip it.
 ## 2. How do you work?
 
 I rely on the [Mercury web parser](https://mercury.postlight.com/web-parser/) to break down a webpage into useful chunks of information (e.g. title, content, etc.). I use those information to create and format a post comment and then post it.
+
+# Running this
+1. Rename `replied.sample.txt` to `replied.txt`.
+2. Create `.env` and `praw.ini`.
+* Details coming soon...
 
 # Credits
 * [Fabian Terh](https://github.com/fterh) (creator)
