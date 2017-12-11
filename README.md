@@ -1,4 +1,6 @@
 # Changelog
+## v 3.1
+* Added site support functionality - the bot only posts where the submission URL is on the list of "approved" URLs (`sites.txt`).
 ## v3.0
 * Completely rewrote the parsing mechanism - the bot now relies on the Mercury web parser. It should now support virtually every news site without having to individually write the rules for each site.
 * The bot should also retrieve *some* information from sites like Youtube (to the extent that Mercury is able to parse *some* information out of it). But the bot should ignore sites like Imgur (where Mercury is unable to parse any *useful* information).
