@@ -1,5 +1,8 @@
 # Changelog
-## v 3.1
+## v4.0
+* The bot can now be summoned at will: `/u/rsg-retrivr summon` (case-sensitive)
+* Further modularized the code
+## v3.1
 * Added site support functionality - the bot only posts where the submission URL is on the list of "approved" URLs (`sites.txt`).
 ## v3.0
 * Completely rewrote the parsing mechanism - the bot now relies on the Mercury web parser. It should now support virtually every news site without having to individually write the rules for each site.
