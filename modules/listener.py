@@ -6,7 +6,7 @@ from modules.core import core
 
 def listener(reddit, subreddit, replied, settings):
 
-    mentions = reddit.inbox.mentions(limit=1)
+    mentions = reddit.inbox.mentions(limit=5)
 
     for mention in mentions:
         submission = reddit.submission(mention.submission.id)
