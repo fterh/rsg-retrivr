@@ -1,6 +1,6 @@
 from modules.mercury import mercury
 
-def core(submission, replied, settings, mention, summoned=False):
+def core(submission, replied, settings, mention=False, summoned=False):
 
     a = mercury(submission.url, settings.mercury_api_key)
 
