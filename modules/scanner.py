@@ -1,0 +1,24 @@
+# this module scans the latest "new" submissions
+# this is, essentially, the original functionality of the Bot
+
+from urllib.parse import urlparse
+import re
+
+from modules.core import core
+
+def scanner(subreddit, sites, replied, settings):
+
+    for submission in subreddit.new(limit=10):
+
+        # if submission is a link and I have not replied to it before
+        if not submission.is_self and submission.id not in replied:
+
+            parsed_url = urlparse(submission.url)
+            site_is_supported = None
+            for site in sites:
+                if re.search(site, parsed_url.netloc) is not None:
+                    site_is_supported = True
+
+            #if site_is_supported
+            if site_is_supported is True:
+                core(submission, replied, settings)
