@@ -33,13 +33,18 @@ If the post is too long to post in a single comment, I'll skip it.
 I rely on the [Mercury Web Parser](https://mercury.postlight.com/web-parser/) API to break down a webpage into useful chunks of information (e.g. title, content, etc.). I use those information to create and format a post comment and then post it.
 
 # Running the bot
-1. Rename `replied.sample.txt` to `replied.txt`.
-2. Rename `.env.sample` to `.env`. The descriptions of each value are as follows:
+1. Install python dependencies by running `pip install -r requirements.txt`.
+
+2. Rename `replied.sample.txt` to `replied.txt`.
+
+3. Rename `.env.sample` to `.env`. The descriptions of each value are as follows:
     * **mercury_api_key**: The API key you get after creating an account at [Mercury Web Parser](https://mercury.postlight.com/web-parser/).
     * **dev_subreddit**: The name (e.g. testsubreddit for /r/testsubreddit) of the subreddit for development/testing environment.
     * **prod_subreddit**: The name (e.g. livesubreddit for /r/livesubreddit) of the subreddit that the live bot will run in.
-3. Create a Reddit script app at https://www.reddit.com/prefs/apps/.
-4. Rename `praw.sample.ini` to `praw.ini`. The descriptions of each value are as follows:
+
+4. Create a Reddit script app at https://www.reddit.com/prefs/apps/.
+
+5. Rename `praw.sample.ini` to `praw.ini`. The descriptions of each value are as follows:
     * **client_id**: The 14 character string listed just under "personal use script" for the desired [developed application](https://www.reddit.com/prefs/apps/).
     * **client_secret**: The 27 character string listed adjacent to `secret` for the application.
     * **password**: The password for the Reddit account used to register the script application.
