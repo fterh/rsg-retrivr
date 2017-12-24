@@ -1,10 +1,10 @@
-from modules.mercury import mercury
+from modules.mercury import Mercury
 
 def core(submission, replied, settings, mention=None, summoned=False):
 
     print("Running core()")
 
-    a = mercury(submission.url, settings.mercury_api_key)
+    a = Mercury(submission.url, settings.MERCURY_API_KEY, settings.BLOCKED_LINKS)
 
     if a.title is not "" and a.body is not "":
         # link to article

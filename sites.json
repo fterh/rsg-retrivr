@@ -1,0 +1,16 @@
+{
+    "approved-sites": [
+        "asiaone.com",
+        "channelnewsasia.com",
+        "mothership.sg",
+        "ricemedia.co",
+        "sg.news.yahoo.com",
+        "straitstimes.com",
+        "theonlinecitizen.com",
+        "theindependent.sg",
+        "todayonline.com"
+    ],
+    "blocked-links": [
+        "facebook.com"
+    ]
+}
