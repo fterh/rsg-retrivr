@@ -6,7 +6,7 @@ import re
 
 from modules.core import core
 
-def scanner(subreddit, sites, replied, settings):
+def scanner(subreddit, replied, settings):
 
     print("Running scanner()")
 
@@ -20,14 +20,15 @@ def scanner(subreddit, sites, replied, settings):
             print("submission is link and not in replied")
 
             parsed_url = urlparse(submission.url)
-            site_is_supported = None
-            for site in sites:
+            site_is_supported = False
+            for site in settings.APPROVED_SITES:
                 print("For site " + site + " in sites")
                 if re.search(site, parsed_url.netloc) is not None:
                     print("Site is supported")
                     site_is_supported = True
+                    break
 
-            #if site_is_supported
+            # if site is supported
             if site_is_supported is True:
                 print("Loading core()")
                 core(submission, replied, settings)
