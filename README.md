@@ -1,4 +1,6 @@
 # Changelog
+Hi there! Thanks for checking out my project. Unfortunately, this bot is indefinitely retired (ever since Straits Times implemented a hard paywall). I might relaunch it (or a modified version of it) in the future if I have the time.
+
 ## v4.0
 * The bot can now be summoned at will: `/u/rsg-retrivr summon` (case-sensitive)
 * Further modularized the code
