@@ -39,8 +39,14 @@ class Mercury:
         soup = bs(self.content, "html.parser")
         body = ""
 
+        # Quick fix for the double posting from straitstimes articles
+        if ("straitstimes.com" in self.domain):
+            soup_body = soup.find_all(lambda tag: tag.name == "p" and not tag.attrs)
+        else:
+            soup_body = soup.find_all("p")
+
         # content to markdown
-        for paragraph in soup.select("p"): # working assumption: <p> tags
+        for paragraph in soup_body:
 
             # hyperlinks to markdown
             if paragraph.a:
