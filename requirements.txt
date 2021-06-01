@@ -11,4 +11,4 @@ requests-file==1.4.2
 six==1.11.0
 tldextract==2.2.0
 update-checker==0.16
-urllib3==1.22
+urllib3==1.26.5
